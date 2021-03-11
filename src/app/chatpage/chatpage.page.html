@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="danger" expand="clear" (click)="this.back()" >Back</ion-button>
+    </ion-buttons>
+
+  <ion-title>Room name </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list>
+
+    <ion-item *ngFor="let entry of form">
+      <ion-thumbnail slot="start">
+        <img src="{{ entry.pic }}" alt="">
+      </ion-thumbnail>
+      <ion-label>{{entry.name}}</ion-label>
+      <ion-label>ราคา  {{entry.price}}</ion-label>
+
+    </ion-item>
+  </ion-list>
+
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item>
+
+        <ion-textarea placeholder="ข้อความ"></ion-textarea>
+      </ion-item>
+    </ion-toolbar>
+  </ion-footer>
+
+</ion-content>
