@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="danger" expand="clear" (click)="this.back()" >Back</ion-button>
+    </ion-buttons>
+    <ion-title>Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card>
+
+  <ion-item>
+    <ion-label position="stacked">Change Username</ion-label>
+    <ion-input placeholder={{getuser}} [(ngModel)]="setuser"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Change Picture</ion-label>
+    <ion-input placeholder={{getimg}} [(ngModel)]="setimg"></ion-input>
+  </ion-item>
+</ion-card>
+<section class="full-width">
+  <ion-button expand="block" color="secondary" (click)="this.update()">Update</ion-button>
+</section>
+</ion-content>

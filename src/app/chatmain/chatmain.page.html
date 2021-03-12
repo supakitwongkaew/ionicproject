@@ -1,19 +1,25 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button color="danger" expand="clear" (click)="this.back()" >Exit</ion-button>
-    </ion-buttons>
-<ion-avatar slot="end">
-      <img src="https://i.pinimg.com/originals/fe/a3/a3/fea3a3dd71cb2bc527da9ca1bb46dd44.jpg">
-
-    </ion-avatar>
-    <ion-title slot="end">User :{{this.getuser}}</ion-title>
-
-
+  <ion-title slot="end">{{this.getuser}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge >
+    <ion-fab-button color="light">
+      <img src={{getimg}}>
+    </ion-fab-button>
+    <ion-fab-list>
+      <ion-fab-button color="light" (click)="this.editprofile()">
+      <ion-icon name="create-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="danger" (click)="this.back()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
   <ion-card color="transparent">
 
   </ion-card >
@@ -22,11 +28,11 @@
     <h4 align="center">Enter Chat Room</h4>
   <ion-item>
     <ion-label position="floating">Room Name</ion-label>
-    <ion-input [(ngModel)]="enterroomname"></ion-input>
+    <ion-input [(ngModel)]="enterroomname" [(ngModel)]="newMsg1"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">Room Key</ion-label><br>
-    <ion-input [(ngModel)]="enterroomkey"></ion-input>
+    <ion-label position="floating" >Room Key</ion-label><br>
+    <ion-input [(ngModel)]="enterroomkey" type="password" [(ngModel)]="newMsg2"></ion-input>
   </ion-item>
   <ion-button color="success" expand="block" (click)="this.roome()" >Enter</ion-button><br>
 
@@ -38,11 +44,11 @@
   <h4 align="center">Create Chat Room</h4>
   <ion-item>
     <ion-label position="floating">Room Name</ion-label>
-    <ion-input [(ngModel)]="getroomname"></ion-input>
+    <ion-input [(ngModel)]="getroomname" [(ngModel)]="newMsg3"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="floating">Room Key</ion-label><br>
-    <ion-input [(ngModel)]="getroomkey"></ion-input>
+    <ion-label position="floating" >Room Key</ion-label><br>
+    <ion-input [(ngModel)]="getroomkey" type="password"[(ngModel)]="newMsg4"></ion-input>
   </ion-item>
 
   <ion-button color="warning" expand="block"  (click)="this.roomc()" >Create</ion-button>

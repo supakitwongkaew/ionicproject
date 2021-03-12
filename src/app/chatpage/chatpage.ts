@@ -9,11 +9,15 @@ export class chatpage{
 
     constructor(private db:AngularFirestore){}
 
-    add(tmpdoc: any){
-        return this.db.collection('chatroom').add(tmpdoc);
+    add(tmpdoc: any,num:any){
+        return this.db.collection('massage').doc().set(tmpdoc);
     }
 
     check(){
         return this.db.collection('chatroom').snapshotChanges();
+    }
+
+    messageshow(){
+        return this.db.collection('massage').snapshotChanges();
     }
 }

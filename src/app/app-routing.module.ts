@@ -17,19 +17,14 @@ const routes: Routes = [
     loadChildren: () => import('./chatmain/chatmain.module').then( m => m.ChatmainPageModule)
   },
   {
-    path: 'chatpage',
+    path: 'chatpage/:obj',
     loadChildren: () => import('./chatpage/chatpage.module').then( m => m.ChatpagePageModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    ...canActivate(redirectLoggedInToChat),
+    path: 'chatedit/:obj2',
+    loadChildren: () => import('./chatedit/chatedit.module').then( m => m.ChateditPageModule)
   },
-  {
-    path: 'chat',
-    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule),
-    ...canActivate(redirectUnauthorizedToLogin),
-  },
+
 ];
 
 @NgModule({
